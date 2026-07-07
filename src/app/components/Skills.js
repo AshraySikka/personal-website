@@ -10,7 +10,7 @@ const skillGroups = [
     color: "sky",
     skills: [
       { name: "Python", level: 90 },
-      { name: "FastAPI", level: 85 },
+      { name: "FastAPI", level: 65 },
       { name: "Django", level: 85 },
       { name: "Django REST Framework", level: 80 },
       { name: "SQLAlchemy 2.0", level: 80 },
@@ -21,9 +21,9 @@ const skillGroups = [
     icon: Layout,
     color: "violet",
     skills: [
-      { name: "React", level: 75 },
+      { name: "React", level: 65 },
       { name: "Vite", level: 75 },
-      { name: "Tailwind CSS", level: 80 },
+      { name: "Tailwind CSS", level: 70 },
     ],
   },
   {
@@ -56,7 +56,7 @@ const skillGroups = [
     skills: [
       { name: "Claude API", level: 85 },
       { name: "Gemini API", level: 70 },
-      { name: "OpenAI API", level: 70 },
+      { name: "OpenAI API", level: 75 },
     ],
   },
 ];

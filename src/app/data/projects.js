@@ -22,10 +22,15 @@ export const projects = [
     description: "Clinical sleep tracking PWA using the CSD-M instrument, piloted by a real sleep clinic.",
     longDescription: "Clinical sleep tracking PWA using the CSD-M instrument, piloted by a real sleep clinic. Full TST/TIB/SE math engine and PDF export.",
     tech: ["React", "Vite", "PostgreSQL", "DRF"],
-    tags: ["PWA", "Full Stack"],
+    tags: ["PWA", "Full Stack", "Backend"],
     github: "https://github.com/AshraySikka/sleep-diary",
     demo: "https://sleep-diary-psi.vercel.app/login",
-    screenshots: ["/screenshots/sleep-diary-1.png", "/screenshots/sleep-diary-2.png"],
+    screenshots: [
+        "/screenshots/sleep-diary-1.png", 
+        "/screenshots/sleep-diary-2.png",
+        "/screenshots/sleep-diary-3.png", 
+        "/screenshots/sleep-diary-4.png",
+    ],
     features: ["CSD-M Clinical Scoring", "PDF Export", "Push Reminders", "Installable PWA"],
   },
   {

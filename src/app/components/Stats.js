@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { label: "Clinical Pilot", value: "1" },
+  { label: "Real Clinical Pilot", value: "1" },
   { label: "Tests Written", value: "400+" },
   { label: "Full Stack Systems", value: "5" },
 ];

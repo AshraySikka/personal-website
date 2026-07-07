@@ -74,7 +74,7 @@ export default function Home() {
             </div>
             <div className="mt-12 grid grid-cols-3 gap-6 max-w-sm">
               {[
-                { label: "Clinical Pilot", value: "1" },
+                { label: "Real Clinical Pilot", value: "1" },
                 { label: "Tests Written", value: "400+" },
                 { label: "Full Stack Systems", value: "5" },
               ].map((stat) => (
