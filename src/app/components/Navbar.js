@@ -17,7 +17,16 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-sky-400/20 bg-zinc-950/80 backdrop-blur">
       <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-semibold text-white hover:text-sky-400 transition-colors">
+        <Link
+        href="/"
+        onClick={(e) => {
+            if (window.location.pathname === "/") {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        }}
+        className="font-semibold text-white hover:text-sky-400 transition-colors"
+        >
         Ashray Sikka
         </Link>
 
