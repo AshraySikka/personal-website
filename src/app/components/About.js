@@ -20,14 +20,13 @@ export default function About() {
         transition={{ duration: 0.5, delay: 0.1 }}
         className="text-lg text-zinc-400 leading-relaxed"
       >
-        I'm a <span className="text-sky-400">backend engineer</span> focused
-        on building reliable APIs and full stack systems, currently
-        completing a Python Backend Web Development certificate at the
-        University of Alberta. My background spans project coordination and
-        hands on engineering, and I bring the discipline of a lead to the
-        focus of an individual contributor. I care about clean architecture,
-        tested code, and shipping things that actually work in production,
-        not just in a demo.
+        I enjoy taking ideas from whiteboard sketches to <span className="text-sky-400">software people can
+        actually use</span>. Whether I'm designing REST APIs, integrating AI, or building
+        full-stack applications, my focus stays the same: write code that's
+        easy to understand, easy to extend, and reliable in production. My background
+        in leading technical implementations taught me that good engineering
+        isn't about writing the most clever code. It's about building systems that
+        other developers can trust and users never have to think about.
       </motion.p>
     </section>
   );

@@ -13,24 +13,30 @@ import { useState, useEffect } from "react";
 
 function useTypewriter(text, speed = 40) {
   const [displayed, setDisplayed] = useState("");
+  const [done, setDone] = useState(false);
+
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
       setDisplayed(text.slice(0, i + 1));
       i++;
-      if (i === text.length) clearInterval(interval);
+      if (i === text.length) {
+        clearInterval(interval);
+        setDone(true);
+      }
     }, speed);
     return () => clearInterval(interval);
   }, [text, speed]);
-  return displayed;
+
+  return { displayed, done };
 }
 
 export default function Home() {
-  const typed = useTypewriter("Backend Engineer building APIs, PWAs, and AI-integrated systems.");
+  const { displayed: typed, done } = useTypewriter("From APIs to AI, I build software that solves real-world problems.");
   return (
     <div className="bg-zinc-950">
       <Navbar />
-      <div className="flex py-24 items-center px-6 max-w-6xl mx-auto">
+      <div className="flex py-8 sm:py-24 items-center px-6 max-w-6xl mx-auto">
         <div className="grid gap-12 sm:grid-cols-2 items-center w-full">
           <div>
             <motion.span
@@ -56,7 +62,7 @@ export default function Home() {
               className="mt-4 text-lg text-zinc-400 min-h-[3.5rem]"
             >
               {typed}
-              <span className="animate-pulse">|</span>
+              {!done && <span className="animate-pulse">|</span>}
             </motion.p>
             <div className="mt-8 flex gap-4">
               <a href="#projects" className="rounded-lg bg-sky-400 px-5 py-3 text-sm font-semibold text-zinc-950 hover:bg-sky-300 transition-colors">
@@ -68,9 +74,9 @@ export default function Home() {
             </div>
             <div className="mt-12 grid grid-cols-3 gap-6 max-w-sm">
               {[
-                { label: "Projects Shipped", value: "5+" },
+                { label: "Clinical Pilot", value: "1" },
                 { label: "Tests Written", value: "400+" },
-                { label: "AI Integrations", value: "3" },
+                { label: "Full Stack Systems", value: "5" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="text-2xl font-bold text-sky-400">{stat.value}</p>
