@@ -14,6 +14,24 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Ashray Sikka | Backend Engineer",
   description: "Backend Engineer building APIs, PWAs, and AI-integrated systems.",
+  metadataBase: new URL("https://ashraysikka.com"),
+  openGraph: {
+    title: "Ashray Sikka | Backend Engineer",
+    description: "Backend Engineer building APIs, PWAs, and AI-integrated systems.",
+    url: "https://ashraysikka.com",
+    siteName: "Ashray Sikka",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ashray Sikka | Backend Engineer",
+    description: "Backend Engineer building APIs, PWAs, and AI-integrated systems.",
+  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {

@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" className="w-full max-w-3xl mx-auto px-6 py-16 text-center">
+    <section id="about" className="w-full max-w-3xl mx-auto px-6 py-8 text-center">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5 }}
         className="text-3xl font-bold text-white mb-6"
       >
@@ -16,8 +16,7 @@ export default function About() {
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
         className="text-lg text-zinc-400 leading-relaxed"
       >
