@@ -72,7 +72,7 @@ export default function Projects() {
         ))}
       </div>
 
-      <div className="relative mt-10 flex h-[300px] sm:h-[420px] items-center justify-center overflow-hidden">
+      <div className="relative mt-10 flex h-[380px] sm:h-[420px] items-center justify-center overflow-hidden">
         {filtered.length > 1 && (
           <button
             onClick={prev}
@@ -103,7 +103,7 @@ export default function Projects() {
             >
               <Link href={`/projects/${project.slug}`}>
                 <div className="rounded-xl border border-zinc-800 bg-zinc-900 overflow-hidden hover:border-sky-400/50 transition-colors duration-300">
-                  <div className="relative h-40 w-full bg-zinc-800">
+                  <div className="relative h-32 sm:h-40 w-full bg-zinc-800">
                     <Image
                       src={project.screenshots[0]}
                       alt={project.title}
@@ -112,24 +112,24 @@ export default function Projects() {
                     />
                     <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-zinc-900 to-transparent" />
                   </div>
-                  <div className="p-5">
-                    <h3 className="text-lg font-semibold text-white">
+                  <div className="p-4 sm:p-5">
+                    <h3 className="text-base sm:text-lg font-semibold text-white">
                       {project.title}
                     </h3>
-                    <p className="mt-2 text-sm text-zinc-400 line-clamp-2">
+                    <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-zinc-400 line-clamp-2">
                       {project.description}
                     </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
+                    <div className="mt-2.5 sm:mt-3 flex flex-wrap gap-1.5 sm:gap-2">
                       {project.tech.slice(0, 4).map((t) => (
                         <span
                           key={t}
-                          className="rounded-full bg-sky-400/10 text-sky-400 px-2.5 py-0.5 text-xs"
+                          className="rounded-full bg-sky-400/10 text-sky-400 px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-xs"
                         >
                           {t}
                         </span>
                       ))}
                     </div>
-                    <div className="mt-4 flex gap-4 text-sm">
+                    <div className="mt-3 sm:mt-4 flex gap-4 text-xs sm:text-sm">
                       {project.demo && (
                         <span className="text-sky-400">Live Demo ↗</span>
                       )}
