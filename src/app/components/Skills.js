@@ -1,125 +1,98 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Server, Layout, Database, Wrench, Sparkles } from "lucide-react";
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { Server, Layout, Database, Wrench, Sparkles, TestTube2, Code2, LineChart } from "lucide-react";
+import { skillDetails } from "../data/skillDetails";
+import SkillDetail from "./SkillDetail";
 
 const skillGroups = [
-  {
-    category: "Backend",
-    icon: Server,
-    color: "sky",
-    skills: [
-      { name: "Python", level: 90 },
-      { name: "FastAPI", level: 65 },
-      { name: "Django", level: 85 },
-      { name: "Django REST Framework", level: 80 },
-      { name: "SQLAlchemy 2.0", level: 80 },
-    ],
-  },
-  {
-    category: "Frontend",
-    icon: Layout,
-    color: "violet",
-    skills: [
-      { name: "React", level: 65 },
-      { name: "Vite", level: 75 },
-      { name: "Tailwind CSS", level: 70 },
-    ],
-  },
-  {
-    category: "Databases",
-    icon: Database,
-    color: "emerald",
-    skills: [
-      { name: "PostgreSQL", level: 85 },
-      { name: "MS SQL", level: 75 },
-      { name: "MySQL", level: 75 },
-      { name: "Supabase", level: 70 },
-      { name: "Neon", level: 70 },
-    ],
-  },
-  {
-    category: "DevOps & Tools",
-    icon: Wrench,
-    color: "amber",
-    skills: [
-      { name: "Docker", level: 75 },
-      { name: "GitHub Actions", level: 80 },
-      { name: "Alembic", level: 70 },
-      { name: "pytest", level: 80 },
-    ],
-  },
-  {
-    category: "AI Integration",
-    icon: Sparkles,
-    color: "pink",
-    skills: [
-      { name: "Claude API", level: 85 },
-      { name: "Gemini API", level: 70 },
-      { name: "OpenAI API", level: 75 },
-    ],
-  },
+  { category: "Languages", icon: Code2, color: "sky", skills: ["Python", "JavaScript", "C++"] },
+  { category: "Backend", icon: Server, color: "indigo", skills: ["FastAPI", "Django", "Django REST Framework", "SQLAlchemy 2.0", "Pydantic", "JWT Authentication"] },
+  { category: "Frontend", icon: Layout, color: "violet", skills: ["React", "Vite", "Tailwind CSS"] },
+  { category: "Databases", icon: Database, color: "emerald", skills: ["PostgreSQL", "MS SQL", "MySQL", "Supabase", "Neon"] },
+  { category: "Data & ETL", icon: LineChart, color: "teal", skills: ["Pandas", "NumPy", "ETL Pipelines"] },
+  { category: "DevOps & Tools", icon: Wrench, color: "amber", skills: ["Docker", "GitHub Actions", "Alembic", "SendGrid", "Stripe"] },
+  { category: "Testing & Quality", icon: TestTube2, color: "rose", skills: ["pytest"] },
+  { category: "AI Integration", icon: Sparkles, color: "pink", skills: ["Claude API", "Claude Vision API", "Gemini API", "OpenAI API"] },
 ];
 
-const barColors = {
-  sky: "bg-sky-500/50",
-  violet: "bg-violet-500/50",
-  emerald: "bg-emerald-500/50",
-  amber: "bg-amber-500/50",
-  pink: "bg-pink-500/50",
+const bgColors = {
+  sky: "bg-sky-500/5 border-sky-500/20 hover:border-sky-500/50",
+  indigo: "bg-indigo-500/5 border-indigo-500/20 hover:border-indigo-500/50",
+  violet: "bg-violet-500/5 border-violet-500/20 hover:border-violet-500/50",
+  emerald: "bg-emerald-500/5 border-emerald-500/20 hover:border-emerald-500/50",
+  teal: "bg-teal-500/5 border-teal-500/20 hover:border-teal-500/50",
+  amber: "bg-amber-500/5 border-amber-500/20 hover:border-amber-500/50",
+  rose: "bg-rose-500/5 border-rose-500/20 hover:border-rose-500/50",
+  pink: "bg-pink-500/5 border-pink-500/20 hover:border-pink-500/50",
 };
 
 const iconColors = {
-  sky: "text-sky-400/80",
-  violet: "text-violet-400/80",
-  emerald: "text-emerald-400/80",
-  amber: "text-amber-400/80",
-  pink: "text-pink-400/80",
+  sky: "text-sky-400/80", indigo: "text-indigo-400/80", violet: "text-violet-400/80",
+  emerald: "text-emerald-400/80", teal: "text-teal-400/80", amber: "text-amber-400/80",
+  rose: "text-rose-400/80", pink: "text-pink-400/80",
+};
+
+const iconBgColors = {
+  sky: "bg-sky-500/10", indigo: "bg-indigo-500/10", violet: "bg-violet-500/10",
+  emerald: "bg-emerald-500/10", teal: "bg-teal-500/10", amber: "bg-amber-500/10",
+  rose: "bg-rose-500/10", pink: "bg-pink-500/10",
 };
 
 export default function Skills() {
+  const [selected, setSelected] = useState(null);
+
   return (
-    <section id="skills" className="w-full max-w-4xl mx-auto px-6 py-8">
-      <div className="mb-12">
+    <section id="skills" className="w-full max-w-5xl mx-auto px-6 py-8">
+      <div className="mb-10">
         <h2 className="text-3xl font-bold text-white mb-2">Skills</h2>
-        <p className="text-zinc-400">Technologies and tools I work with</p>
+        <p className="text-zinc-400">Tap any skill to see where it's actually used.</p>
       </div>
-      <div className="grid gap-10 sm:grid-cols-2">
-        {skillGroups.map((group, i) => {
-          const Icon = group.icon;
+
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 [&>div]:mb-6 [&>div]:break-inside-avoid">
+        {skillGroups.map((group) => {
+          const GroupIcon = group.icon;
           return (
-            <motion.div
-              key={group.category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <Icon size={18} className={iconColors[group.color]} />
+            <div key={group.category}>
+              <div className="flex items-center gap-2 mb-3">
+                <GroupIcon size={18} className={iconColors[group.color]} />
                 <h3 className="text-sm font-semibold text-white">{group.category}</h3>
               </div>
-              <div className="space-y-3">
-                {group.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between text-xs text-zinc-400 mb-1">
-                      <span>{skill.name}</span>
-                    </div>
-                    <div className="h-1.5 w-full rounded-full bg-zinc-800">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${skill.level}%` }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className={`h-full rounded-full ${barColors[group.color]}`}
-                      />
-                    </div>
-                  </div>
-                ))}
+              <div className="flex flex-col gap-2">
+                {group.skills.map((skill) => {
+                  const detail = skillDetails[skill];
+                  if (!detail) return null;
+                  const SkillIcon = detail.icon;
+                  return (
+                    <button
+                      key={skill}
+                      onClick={() => setSelected({ name: skill, detail, color: group.color })}
+                      className={`flex items-center gap-2 text-left rounded-lg border px-3 py-2 text-sm text-zinc-200 transition-all duration-200 hover:-translate-y-0.5 ${bgColors[group.color]}`}
+                    >
+                      <SkillIcon size={16} className={iconColors[group.color]} />
+                      {skill}
+                    </button>
+                  );
+                })}
               </div>
-            </motion.div>
+            </div>
           );
         })}
       </div>
+
+      <AnimatePresence>
+        {selected && (
+          <SkillDetail
+            skillName={selected.name}
+            detail={selected.detail}
+            iconBg={iconBgColors[selected.color]}
+            iconColor={iconColors[selected.color]}
+            textColor={iconColors[selected.color]}
+            onClose={() => setSelected(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

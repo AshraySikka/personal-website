@@ -39,7 +39,7 @@ export const projects = [
     category: "AI/ML",
     description: "Dashboard for tracking symptoms with analytics and AI-generated plans.",
     longDescription: "Health tracking app generating personalized meal and exercise plans using the Claude API.",
-    tech: ["Django", "PostgreSQL", "React", "Claude API"],
+    tech: ["Django DRF", "React", "Vite", "Supabase", "Claude API"],
     tags: ["PWA", "AI/ML", "Full Stack"],
     github: "https://github.com/AshraySikka/PCOS-Tracker",
     demo: "https://pcos-tracker-ten.vercel.app/login",
