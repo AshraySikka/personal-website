@@ -49,6 +49,7 @@ export const projects = [
       "/screenshots/pcos-3.png",
       "/screenshots/pcos-4.png",
       "/screenshots/pcos-5.png",
+      "/screenshots/pcos-6.png",
     ],
     features: ["Symptom Tracking", "AI Meal Plans", "Exercise Recommendations", "Progress Analytics"],
   },

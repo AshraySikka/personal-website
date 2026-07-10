@@ -8,6 +8,7 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Certification from "./components/Certification";
 
 import { useState, useEffect } from "react";
 
@@ -72,6 +73,7 @@ export default function Home() {
                 Get In Touch
               </a>
             </div>
+            <Certification />
             <div className="mt-12 grid grid-cols-3 gap-6 max-w-sm">
               {[
                 { label: "Real Clinical Pilot", value: "1" },
