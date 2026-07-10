@@ -40,6 +40,31 @@ const iconBgColors = {
   rose: "bg-rose-500/10", pink: "bg-pink-500/10",
 };
 
+const barFillColors = {
+  sky: "bg-sky-400", indigo: "bg-indigo-400", violet: "bg-violet-400",
+  emerald: "bg-emerald-400", teal: "bg-teal-400", amber: "bg-amber-400",
+  rose: "bg-rose-400", pink: "bg-pink-400",
+};
+
+function ProficiencyBar({ familiarity, color }) {
+  return (
+    <div className="flex gap-0.5 shrink-0">
+      {Array.from({ length: 5 }).map((_, i) => {
+        const segmentStart = i * 20;
+        const fillPercent = Math.max(0, Math.min(100, ((familiarity - segmentStart) / 20) * 100));
+        return (
+          <span key={i} className="relative h-1.5 w-3 rounded-full bg-zinc-700 overflow-hidden">
+            <span
+              className={`absolute inset-y-0 left-0 rounded-full ${barFillColors[color]}`}
+              style={{ width: `${fillPercent}%` }}
+            />
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function Skills() {
   const [selected, setSelected] = useState(null);
 
@@ -68,10 +93,13 @@ export default function Skills() {
                     <button
                       key={skill}
                       onClick={() => setSelected({ name: skill, detail, color: group.color })}
-                      className={`flex items-center gap-2 text-left rounded-lg border px-3 py-2 text-sm text-zinc-200 transition-all duration-200 hover:-translate-y-0.5 ${bgColors[group.color]}`}
+                      className={`flex items-center justify-between gap-2 text-left rounded-lg border px-3 py-2 text-sm text-zinc-200 transition-all duration-200 hover:-translate-y-0.5 ${bgColors[group.color]}`}
                     >
-                      <SkillIcon size={16} className={iconColors[group.color]} />
-                      {skill}
+                      <span className="flex items-center gap-2 min-w-0">
+                        <SkillIcon size={16} className={iconColors[group.color]} />
+                        <span className="truncate">{skill}</span>
+                      </span>
+                      <ProficiencyBar familiarity={detail.familiarity} color={group.color} />
                     </button>
                   );
                 })}

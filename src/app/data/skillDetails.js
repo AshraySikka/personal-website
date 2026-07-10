@@ -4,12 +4,21 @@ import {
   SiPytest, SiJsonwebtokens, SiPydantic, SiAnthropic, SiGooglegemini,
   SiStripe, SiJavascript, SiCplusplus, SiPandas, SiNumpy,
 } from "react-icons/si";
-import { DatabaseZap, Sparkles, Mail, Database as DbIcon, Workflow } from "lucide-react";
+import { DatabaseZap, Sparkles, Mail, Workflow } from "lucide-react";
+
+// Familiarity tiers (0-100)
+// 0–34: Exposure: not really used as a labeled tier
+// 35–49: Familiar: used in one project or a narrow context, comfortable but not deep
+// 50–74: Proficient: used across multiple projects or forms a core part of your regular work
+// 75–100: Advanced: used extensively across most/all projects, something you could whiteboard or debug confidently without looking things up
+
+
 
 export const skillDetails = {
   Python: {
     icon: SiPython,
-    level: "Proficient",
+    level: "Advanced",
+    familiarity: 90,
     summary: "Core language across every backend project I've shipped.",
     projects: [
       { slug: "caretrack-api", title: "CareTrack API" },
@@ -18,24 +27,16 @@ export const skillDetails = {
       { slug: "medscan-ai", title: "MedScan AI" },
       { slug: "urban-spark", title: "Urban Spark" },
     ],
-    description:
-      "Used across every project on this site, from async REST APIs to Django full-stack apps to AI-integrated tools.",
+    description: "Used across every project on this site, from async REST APIs to Django full-stack apps to AI-integrated tools.",
     links: [
       { label: "Resume Matcher", url: "https://github.com/AshraySikka/Resume-matcher" },
       { label: "Healthcare ETL Pipeline", url: "https://github.com/AshraySikka/Healthcare-ETL-Pipeline" },
     ],
   },
-  SQL: {
-    icon: DbIcon,
-    level: "Proficient",
-    summary: "Query language underlying every database I've worked with.",
-    projects: [],
-    description: "Used across PostgreSQL, MySQL, and MS SQL Server work, both in professional and project contexts.",
-    links: [],
-  },
   JavaScript: {
     icon: SiJavascript,
-    level: "Familiar",
+    level: "Proficient",
+    familiarity: 60,
     summary: "Used for React frontend logic.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
@@ -47,6 +48,7 @@ export const skillDetails = {
   "C++": {
     icon: SiCplusplus,
     level: "Familiar",
+    familiarity: 35,
     summary: "Early-career work in telecom and industrial systems.",
     projects: [],
     description: "Used in embedded sensor monitoring and data-processing tooling for telecom infrastructure and industrial relay/control applications.",
@@ -55,28 +57,29 @@ export const skillDetails = {
   FastAPI: {
     icon: SiFastapi,
     level: "Proficient",
+    familiarity: 50,
     summary: "Async REST API framework for CareTrack API.",
     projects: [{ slug: "caretrack-api", title: "CareTrack API" }],
-    description:
-      "Built CareTrack API's full CRUD layer with async SQLAlchemy 2.0, Pydantic v2 validation, and JWT auth. 26+ pytest tests run in CI, deployed via Docker on Render.",
+    description: "Built CareTrack API's full CRUD layer with async SQLAlchemy 2.0, Pydantic v2 validation, and JWT auth. 26+ pytest tests run in CI, deployed via Docker on Render.",
     links: [],
   },
   Django: {
     icon: SiDjango,
-    level: "Proficient",
+    level: "Advanced",
+    familiarity: 85,
     summary: "Backend framework for PCOS Tracker, MedScan AI, and Urban Spark.",
     projects: [
       { slug: "pcos-tracker", title: "PCOS Tracker" },
       { slug: "medscan-ai", title: "MedScan AI" },
       { slug: "urban-spark", title: "Urban Spark" },
     ],
-    description:
-      "PCOS Tracker's DRF backend serves a React frontend and integrates the Claude API for meal/exercise plans. MedScan AI generates structured diagnostic reports via Claude Vision. Urban Spark is a full restaurant management system built with a team of 3.",
+    description: "PCOS Tracker's DRF backend serves a React frontend and integrates the Claude API for meal/exercise plans. MedScan AI generates structured diagnostic reports via Claude Vision. Urban Spark is a full restaurant management system built with a team of 3.",
     links: [],
   },
   "Django REST Framework": {
     icon: SiDjango,
     level: "Proficient",
+    familiarity: 70,
     summary: "REST layer for Sleep Diary and PCOS Tracker.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
@@ -88,6 +91,7 @@ export const skillDetails = {
   "SQLAlchemy 2.0": {
     icon: SiPostgresql,
     level: "Proficient",
+    familiarity: 65,
     summary: "Async ORM for CareTrack API.",
     projects: [{ slug: "caretrack-api", title: "CareTrack API" }],
     description: "Async models for User, Patient, Provider, Care Plan, and Appointment, with Alembic managing schema migrations.",
@@ -96,6 +100,7 @@ export const skillDetails = {
   Pydantic: {
     icon: SiPydantic,
     level: "Familiar",
+    familiarity: 45,
     summary: "Request/response validation for CareTrack API.",
     projects: [{ slug: "caretrack-api", title: "CareTrack API" }],
     description: "Pydantic v2 schemas validate every request and response on CareTrack API's endpoints.",
@@ -103,7 +108,8 @@ export const skillDetails = {
   },
   "JWT Authentication": {
     icon: SiJsonwebtokens,
-    level: "Familiar",
+    level: "Proficient",
+    familiarity: 55,
     summary: "Auth layer for CareTrack API.",
     projects: [{ slug: "caretrack-api", title: "CareTrack API" }],
     description: "JWT-based auth with role-based access control gating CareTrack API's endpoints.",
@@ -112,6 +118,7 @@ export const skillDetails = {
   React: {
     icon: SiReact,
     level: "Proficient",
+    familiarity: 65,
     summary: "Frontend framework for both PWAs I've shipped.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
@@ -123,6 +130,7 @@ export const skillDetails = {
   Vite: {
     icon: SiVite,
     level: "Familiar",
+    familiarity: 40,
     summary: "Build tooling for both React frontends.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
@@ -134,6 +142,7 @@ export const skillDetails = {
   "Tailwind CSS": {
     icon: SiTailwindcss,
     level: "Proficient",
+    familiarity: 65,
     summary: "Styling for this site and both React frontends.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
@@ -144,7 +153,8 @@ export const skillDetails = {
   },
   PostgreSQL: {
     icon: SiPostgresql,
-    level: "Proficient",
+    level: "Advanced",
+    familiarity: 85,
     summary: "Primary database across most of my projects.",
     projects: [
       { slug: "caretrack-api", title: "CareTrack API" },
@@ -157,7 +167,8 @@ export const skillDetails = {
   },
   MySQL: {
     icon: SiMysql,
-    level: "Familiar",
+    level: "Advanced",
+    familiarity: 80,
     summary: "Database layer for Urban Spark.",
     projects: [{ slug: "urban-spark", title: "Urban Spark" }],
     description: "Relational schema for Urban Spark's reservation, role, and loyalty-points system.",
@@ -166,6 +177,7 @@ export const skillDetails = {
   "MS SQL": {
     icon: DatabaseZap,
     level: "Familiar",
+    familiarity: 40,
     summary: "Used in professional context.",
     projects: [],
     description: "Used at Bayshore Healthcare and prior roles; not tied to a public project shown here.",
@@ -174,6 +186,7 @@ export const skillDetails = {
   Supabase: {
     icon: SiSupabase,
     level: "Familiar",
+    familiarity: 45,
     summary: "Managed Postgres backend for PCOS Tracker.",
     projects: [{ slug: "pcos-tracker", title: "PCOS Tracker" }],
     description: "Supabase-hosted PostgreSQL backing PCOS Tracker's Django DRF API.",
@@ -181,7 +194,8 @@ export const skillDetails = {
   },
   Neon: {
     icon: SiPostgresql,
-    level: "Familiar",
+    level: "Proficient",
+    familiarity: 50,
     summary: "Serverless Postgres for Sleep Diary.",
     projects: [{ slug: "sleep-diary", title: "Sleep Diary" }],
     description: "Neon-hosted PostgreSQL for Sleep Diary's clinical data models.",
@@ -189,7 +203,8 @@ export const skillDetails = {
   },
   Docker: {
     icon: SiDocker,
-    level: "Familiar",
+    level: "Proficient",
+    familiarity: 60,
     summary: "Containerized deployment for CareTrack API.",
     projects: [{ slug: "caretrack-api", title: "CareTrack API" }],
     description: "Full containerization for CareTrack API, deployed on Render.",
@@ -197,7 +212,8 @@ export const skillDetails = {
   },
   "GitHub Actions": {
     icon: SiGithubactions,
-    level: "Familiar",
+    level: "Advanced",
+    familiarity: 85,
     summary: "CI/CD across several projects.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
@@ -209,6 +225,7 @@ export const skillDetails = {
   Alembic: {
     icon: SiPostgresql,
     level: "Familiar",
+    familiarity: 40,
     summary: "Schema migrations for CareTrack API.",
     projects: [{ slug: "caretrack-api", title: "CareTrack API" }],
     description: "Manages PostgreSQL schema migrations for CareTrack API.",
@@ -216,7 +233,8 @@ export const skillDetails = {
   },
   pytest: {
     icon: SiPytest,
-    level: "Proficient",
+    level: "Advanced",
+    familiarity: 85,
     summary: "Test suites for CareTrack API and Urban Spark.",
     projects: [
       { slug: "caretrack-api", title: "CareTrack API" },
@@ -228,6 +246,7 @@ export const skillDetails = {
   Pandas: {
     icon: SiPandas,
     level: "Familiar",
+    familiarity: 40,
     summary: "Data transformation in a healthcare ETL pipeline.",
     projects: [],
     description: "Used for data transformation and quality checks in an ETL pipeline project.",
@@ -236,6 +255,7 @@ export const skillDetails = {
   NumPy: {
     icon: SiNumpy,
     level: "Familiar",
+    familiarity: 35,
     summary: "Numerical operations in data pipeline work.",
     projects: [],
     description: "Paired with Pandas for data transformation logic in an ETL pipeline project.",
@@ -244,6 +264,7 @@ export const skillDetails = {
   "ETL Pipelines": {
     icon: Workflow,
     level: "Familiar",
+    familiarity: 40,
     summary: "Built a healthcare data ETL pipeline.",
     projects: [],
     description: "Designed a pipeline for extracting, transforming, and loading multi-source healthcare data with validation and error handling.",
@@ -252,6 +273,7 @@ export const skillDetails = {
   "Claude API": {
     icon: SiAnthropic,
     level: "Proficient",
+    familiarity: 65,
     summary: "Generates personalized plans in PCOS Tracker.",
     projects: [{ slug: "pcos-tracker", title: "PCOS Tracker" }],
     description: "Generates personalized meal and exercise plans based on user-tracked symptoms.",
@@ -260,6 +282,7 @@ export const skillDetails = {
   "Claude Vision API": {
     icon: SiAnthropic,
     level: "Familiar",
+    familiarity: 45,
     summary: "Diagnostic report generation in MedScan AI.",
     projects: [{ slug: "medscan-ai", title: "MedScan AI" }],
     description: "Analyzes uploaded medical images and returns structured diagnostic reports.",
@@ -268,6 +291,7 @@ export const skillDetails = {
   "Gemini API": {
     icon: SiGooglegemini,
     level: "Familiar",
+    familiarity: 35,
     summary: "Powers resume-to-job-description matching.",
     projects: [],
     description: "Used in Resume Matcher, a project scoring resumes against job descriptions with AI-generated feedback.",
@@ -276,6 +300,7 @@ export const skillDetails = {
   "OpenAI API": {
     icon: Sparkles,
     level: "Familiar",
+    familiarity: 30,
     summary: "Used in professional/experimental context.",
     projects: [],
     description: "Explored for LLM integration work; not tied to a public project shown here.",
@@ -284,6 +309,7 @@ export const skillDetails = {
   Stripe: {
     icon: SiStripe,
     level: "Familiar",
+    familiarity: 40,
     summary: "Payment processing for Urban Spark.",
     projects: [{ slug: "urban-spark", title: "Urban Spark" }],
     description: "Handles restaurant ordering payments within Urban Spark.",
@@ -292,6 +318,7 @@ export const skillDetails = {
   SendGrid: {
     icon: Mail,
     level: "Familiar",
+    familiarity: 40,
     summary: "Email delivery for Sleep Diary.",
     projects: [{ slug: "sleep-diary", title: "Sleep Diary" }],
     description: "Handles OTP signup emails and clinician-facing PDF report delivery.",
