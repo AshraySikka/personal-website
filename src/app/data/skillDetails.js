@@ -2,9 +2,9 @@ import {
   SiPython, SiFastapi, SiDjango, SiReact, SiVite, SiTailwindcss,
   SiPostgresql, SiMysql, SiSupabase, SiDocker, SiGithubactions,
   SiPytest, SiJsonwebtokens, SiPydantic, SiAnthropic, SiGooglegemini,
-  SiStripe, SiJavascript, SiCplusplus, SiPandas, SiNumpy,
+  SiStripe, SiJavascript, SiCplusplus, SiPandas, SiNumpy, SiRailway, SiAstro, 
 } from "react-icons/si";
-import { DatabaseZap, Sparkles, Mail, Workflow } from "lucide-react";
+import { DatabaseZap, Sparkles, Mail, Workflow, Globe } from "lucide-react";
 
 // Familiarity tiers (0-100)
 // 0–34: Exposure: not really used as a labeled tier
@@ -324,4 +324,31 @@ export const skillDetails = {
     description: "Handles OTP signup emails and clinician-facing PDF report delivery.",
     links: [],
   },
+  Railway: {
+  icon: SiRailway,
+  level: "Familiar",
+  familiarity: 48,
+  summary: "Deployment platform for MedScan AI.",
+  projects: [{ slug: "medscan-ai", title: "MedScan AI" }],
+  description: "Hosts MedScan AI's Django backend and Claude Vision API integration in production.",
+  links: [],
+},
+Netlify: {
+  icon: Globe,
+  level: "Proficient",
+  familiarity: 55,
+  summary: "Hosting and deployment for this site.",
+  projects: [],
+  description: "This portfolio is built with Next.js and deployed on Netlify, connected to a custom domain with DNS managed through Porkbun.",
+  links: [],
+},
+Astro: {
+  icon: SiAstro,
+  level: "Familiar",
+  familiarity: 40,
+  summary: "Used to build a client website.",
+  projects: [],
+  description: "Built learnwithmantra.com, a content-driven site with a CMS-backed admin panel, using Astro and Decap CMS, deployed on Netlify.",
+  links: [{ label: "Live Site", url: "https://learnwithmantra.com" }],
+},
 };

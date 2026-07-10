@@ -9,10 +9,10 @@ import SkillDetail from "./SkillDetail";
 const skillGroups = [
   { category: "Languages", icon: Code2, color: "sky", skills: ["Python", "JavaScript", "C++"] },
   { category: "Backend", icon: Server, color: "indigo", skills: ["FastAPI", "Django", "Django REST Framework", "SQLAlchemy 2.0", "Pydantic", "JWT Authentication"] },
-  { category: "Frontend", icon: Layout, color: "violet", skills: ["React", "Vite", "Tailwind CSS"] },
+  { category: "Frontend", icon: Layout, color: "violet", skills: ["React", "Vite", "Tailwind CSS", "Astro"] },
   { category: "Databases", icon: Database, color: "emerald", skills: ["PostgreSQL", "MS SQL", "MySQL", "Supabase", "Neon"] },
   { category: "Data & ETL", icon: LineChart, color: "teal", skills: ["Pandas", "NumPy", "ETL Pipelines"] },
-  { category: "DevOps & Tools", icon: Wrench, color: "amber", skills: ["Docker", "GitHub Actions", "Alembic", "SendGrid", "Stripe"] },
+  { category: "DevOps & Tools", icon: Wrench, color: "amber", skills: ["Docker", "GitHub Actions", "Alembic", "SendGrid", "Stripe", "Railway", "Netlify"] },
   { category: "Testing & Quality", icon: TestTube2, color: "rose", skills: ["pytest"] },
   { category: "AI Integration", icon: Sparkles, color: "pink", skills: ["Claude API", "Claude Vision API", "Gemini API", "OpenAI API"] },
 ];
