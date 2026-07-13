@@ -24,7 +24,7 @@ export const projects = [
     tech: ["React", "Vite", "PostgreSQL", "DRF"],
     tags: ["PWA", "Full Stack", "Backend"],
     github: "https://github.com/AshraySikka/sleep-diary",
-    demo: "https://sleep-diary-psi.vercel.app/login",
+    demo: "https://sleep-diary-api.onrender.com/api/auth/demo-login/",
     screenshots: [
         "/screenshots/sleep-diary-1.png", 
         "/screenshots/sleep-diary-2.png",
