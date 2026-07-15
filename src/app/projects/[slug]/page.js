@@ -15,6 +15,7 @@ export default function ProjectDetail({ params }) {
   const project = projects.find((p) => p.slug === slug);
   const [current, setCurrent] = useState(0);
   const [dims, setDims] = useState(null);
+  const [copied, setCopied] = useState(null);
 
   if (!project) return notFound();
 
@@ -25,6 +26,12 @@ export default function ProjectDetail({ params }) {
   const prev = () => {
     setDims(null);
     setCurrent((c) => (c - 1 + project.screenshots.length) % project.screenshots.length);
+  };
+
+  const copyToClipboard = (text, key) => {
+    navigator.clipboard.writeText(text);
+    setCopied(key);
+    setTimeout(() => setCopied(null), 1500);
   };
 
   const isPortrait = dims && dims.height > dims.width;
@@ -64,6 +71,42 @@ export default function ProjectDetail({ params }) {
             GitHub ↗
           </a>
         </div>
+
+        {project.demoCredentials && (
+          <div className="mt-6 max-w-2xl rounded-xl border border-zinc-800 bg-zinc-900 p-5">
+            <h3 className="text-sm font-semibold text-white">Try it yourself</h3>
+            <p className="mt-1.5 text-sm text-zinc-400">{project.demoCredentials.note}</p>
+
+            <div className="mt-4 flex flex-wrap items-center gap-2 rounded-lg bg-zinc-800/50 px-4 py-2.5">
+              <span className="text-xs uppercase tracking-wide text-zinc-500">Password</span>
+              <code className="text-sm text-sky-400">{project.demoCredentials.password}</code>
+              <button
+                onClick={() => copyToClipboard(project.demoCredentials.password, "password")}
+                className="ml-auto text-xs text-zinc-400 hover:text-sky-400 transition-colors"
+              >
+                {copied === "password" ? "Copied" : "Copy"}
+              </button>
+            </div>
+
+            <div className="mt-3 flex flex-col gap-2">
+              {project.demoCredentials.accounts.map((acc) => (
+                <div
+                  key={acc.email}
+                  className="flex flex-wrap items-center gap-2 rounded-lg border border-zinc-800 px-4 py-2.5"
+                >
+                  <span className="min-w-[8.5rem] text-xs font-medium text-zinc-300">{acc.role}</span>
+                  <code className="text-sm text-zinc-200">{acc.email}</code>
+                  <button
+                    onClick={() => copyToClipboard(acc.email, acc.email)}
+                    className="ml-auto text-xs text-zinc-400 hover:text-sky-400 transition-colors"
+                  >
+                    {copied === acc.email ? "Copied" : "Copy"}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className={`relative mt-10 rounded-xl overflow-hidden bg-zinc-900 group transition-all duration-300 max-w-full ${containerClass}`}>
           <AnimatePresence mode="wait">

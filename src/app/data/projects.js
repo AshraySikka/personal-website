@@ -91,4 +91,33 @@ export const projects = [
     ],
     features: ["Role-based Permissions", "Kitchen Queue", "Stripe Payments", "370+ Tests, CI/CD"],
   },
+  {
+    slug: "carelink",
+    title: "CareLink",
+    category: "Full Stack",
+    description: "Multi role healthcare coordination platform connecting hospital partners, customer service, field staff, and clients, built with AI assisted development on Lovable.",
+    longDescription: "Invite only, multi role healthcare coordination platform built by directing an AI coding tool (Lovable) through a real production style build: five distinct roles, Supabase backed auth and row level security, referral intake with document upload, and shift scheduling. Includes a critical security fix, an over broad RLS policy that exposed client contact data, identified and remediated through direct database review.",
+    tech: ["React", "Supabase", "PostgreSQL", "Tailwind CSS", "Lovable"],
+    tags: ["Full Stack"],
+    github: "https://github.com/AshraySikka/care-connect-hub",
+    demo: "https://care-link-medapp.lovable.app",
+    screenshots: [
+      "/screenshots/carelink-1.png",
+      "/screenshots/carelink-2.png",
+      "/screenshots/carelink-3.png",
+      "/screenshots/carelink-4.png",
+    ],
+    features: ["Invite Only, Role Based Auth", "Row Level Security", "Referral Document Upload", "Shift Scheduling"],
+    demoCredentials: {
+      note: "This app is invite only, there is no public sign up. Use any account below to explore a role.",
+      password: "CareLinkDemo!2026",
+      accounts: [
+        { role: "Hospital Partner", email: "demo.hp1@yopmail.com" },
+        { role: "Customer Service", email: "demo.cs1@yopmail.com" },
+        { role: "Field Staff", email: "demo.fs1@yopmail.com" },
+        { role: "Client", email: "demo.client1@yopmail.com" },
+        { role: "Family (read only)", email: "demo.family1@yopmail.com" },
+      ],
+    },
+  },
 ];

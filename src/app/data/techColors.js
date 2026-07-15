@@ -8,7 +8,7 @@ const techColors = {
   Docker: "amber", "GitHub Actions": "amber", Alembic: "amber",
   pytest: "amber", Pytest: "amber", Stripe: "amber", Nginx: "amber",
   "Claude API": "pink", "Gemini API": "pink", "OpenAI API": "pink",
-  "Claude Vision API": "pink", Cloudinary: "pink",
+  "Claude Vision API": "pink", Cloudinary: "pink", Lovable: "pink",
 };
 
 const classMap = {

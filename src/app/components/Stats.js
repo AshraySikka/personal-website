@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const stats = [
   { label: "Real Clinical Pilot", value: "1" },
   { label: "Tests Written", value: "400+" },
-  { label: "Full Stack Systems", value: "5" },
+  { label: "Full Stack Systems", value: "6" },
 ];
 
 export default function Stats() {

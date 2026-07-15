@@ -78,7 +78,7 @@ export default function Home() {
               {[
                 { label: "Real Clinical Pilot", value: "1" },
                 { label: "Tests Written", value: "400+" },
-                { label: "Full Stack Systems", value: "5" },
+                { label: "Full Stack Systems", value: "6" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="text-2xl font-bold text-sky-400">{stat.value}</p>

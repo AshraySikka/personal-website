@@ -14,7 +14,7 @@ const skillGroups = [
   { category: "Data & ETL", icon: LineChart, color: "teal", skills: ["Pandas", "NumPy", "ETL Pipelines"] },
   { category: "DevOps & Tools", icon: Wrench, color: "amber", skills: ["Docker", "GitHub Actions", "Alembic", "SendGrid", "Stripe", "Railway", "Netlify"] },
   { category: "Testing & Quality", icon: TestTube2, color: "rose", skills: ["pytest"] },
-  { category: "AI Integration", icon: Sparkles, color: "pink", skills: ["Claude API", "Claude Vision API", "Gemini API", "OpenAI API"] },
+  { category: "AI Integration", icon: Sparkles, color: "pink", skills: ["Claude API", "Claude Vision API", "Gemini API", "OpenAI API", "Lovable"] },
 ];
 
 const bgColors = {
