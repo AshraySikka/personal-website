@@ -77,8 +77,8 @@ const rows = [
 export default function CardPage() {
   return (
     <main
-      className="min-h-screen flex items-center justify-center px-4 py-16"
-      style={{ background: "#0B0D0F" }}
+    className="min-h-dvh flex items-center justify-center px-4 py-6 sm:py-16 overflow-y-auto"
+    style={{ background: "#0B0D0F" }}
     >
       <div
         className={`${mono.className} relative w-full max-w-sm rounded-[28px] p-6 pt-10`}
