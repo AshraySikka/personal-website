@@ -45,7 +45,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               className="text-sm font-semibold uppercase tracking-wide text-sky-400"
             >
-              Backend Engineer
+              Software Engineer
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}

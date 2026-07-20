@@ -57,7 +57,12 @@ export default function ProjectDetail({ params }) {
           ))}
         </div>
 
-        <p className="mt-4 max-w-2xl text-zinc-400">{project.longDescription}</p>
+        <div className="mt-4 max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-wide text-sky-400">
+            {project.problem}
+          </p>
+          <p className="mt-2 text-zinc-400">{project.longDescription}</p>
+        </div>
 
         <div className="mt-6 flex gap-4">
           {project.demo && (
@@ -108,7 +113,7 @@ export default function ProjectDetail({ params }) {
           </div>
         )}
 
-        <div className={`relative mt-10 rounded-xl overflow-hidden bg-zinc-900 group transition-all duration-300 max-w-full ${containerClass}`}>
+        <div className={`relative mt-10 rounded-xl overflow-hidden isolate bg-zinc-900 group transition-all duration-300 max-w-full [transform:translateZ(0)] ${containerClass}`}>
           <AnimatePresence mode="wait">
             <motion.div
               key={current}

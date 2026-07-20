@@ -29,8 +29,8 @@ export const skillDetails = {
     ],
     description: "Used across every project on this site, from async REST APIs to Django full-stack apps to AI-integrated tools.",
     links: [
-      { label: "Resume Matcher", url: "https://github.com/AshraySikka/Resume-matcher" },
-      { label: "Healthcare ETL Pipeline", url: "https://github.com/AshraySikka/Healthcare-ETL-Pipeline" },
+      { label: "Resume Matcher", url: "https://resume-matcher-ashray.streamlit.app/" },
+      { label: "Healthcare ETL Pipeline", url: "https://9doyfrufk22skc46xhh28b.streamlit.app/" },
     ],
   },
   JavaScript: {
@@ -254,7 +254,7 @@ export const skillDetails = {
     summary: "Data transformation in a healthcare ETL pipeline.",
     projects: [],
     description: "Used for data transformation and quality checks in an ETL pipeline project.",
-    links: [{ label: "Healthcare ETL Pipeline", url: "https://github.com/AshraySikka/Healthcare-ETL-Pipeline" }],
+    links: [{ label: "Healthcare ETL Pipeline", url: "https://9doyfrufk22skc46xhh28b.streamlit.app/" }],
   },
   NumPy: {
     icon: SiNumpy,
@@ -263,7 +263,7 @@ export const skillDetails = {
     summary: "Numerical operations in data pipeline work.",
     projects: [],
     description: "Paired with Pandas for data transformation logic in an ETL pipeline project.",
-    links: [{ label: "Healthcare ETL Pipeline", url: "https://github.com/AshraySikka/Healthcare-ETL-Pipeline" }],
+    links: [{ label: "Healthcare ETL Pipeline", url: "https://9doyfrufk22skc46xhh28b.streamlit.app/" }],
   },
   "ETL Pipelines": {
     icon: Workflow,
@@ -272,7 +272,7 @@ export const skillDetails = {
     summary: "Built a healthcare data ETL pipeline.",
     projects: [],
     description: "Designed a pipeline for extracting, transforming, and loading multi-source healthcare data with validation and error handling.",
-    links: [{ label: "Healthcare ETL Pipeline", url: "https://github.com/AshraySikka/Healthcare-ETL-Pipeline" }],
+    links: [{ label: "Healthcare ETL Pipeline", url: "https://9doyfrufk22skc46xhh28b.streamlit.app/" }],
   },
   "Claude API": {
     icon: SiAnthropic,
@@ -299,7 +299,9 @@ export const skillDetails = {
     summary: "Powers resume-to-job-description matching.",
     projects: [],
     description: "Used in Resume Matcher, a project scoring resumes against job descriptions with AI-generated feedback.",
-    links: [{ label: "Resume Matcher on GitHub", url: "https://github.com/AshraySikka/Resume-matcher" }],
+    links: [
+      { label: "Resume Matcher Demo", url: "https://resume-matcher-ashray.streamlit.app/" }
+    ],
   },
   "OpenAI API": {
     icon: Sparkles,
@@ -362,9 +364,6 @@ export const skillDetails = {
     summary: "AI assisted full stack builder for CareLink.",
     projects: [{ slug: "carelink", title: "CareLink" }],
     description: "Directed Lovable to build CareLink, a multi role healthcare coordination platform: invite only auth across five roles, Supabase backed database and RLS, referral and scheduling workflows, and document upload. Reviewed generated code directly, traced and fixed routing and redirect bugs, and identified and remediated a critical row level security vulnerability that exposed client contact data to an over-broad staff role.",
-    links: [
-      { label: "Live Demo", url: "https://care-link-medapp.lovable.app" },
-      { label: "GitHub", url: "https://github.com/AshraySikka/care-connect-hub" },
-    ],
+    links: [],
   },
 };
