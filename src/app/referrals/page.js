@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Ledger from "./Ledger";
+import Link from "next/link";
 
 const EMAIL = "ashray@ashraysikka.com";
 const SUBJECT = "ReferralSort trial";
@@ -166,7 +167,7 @@ export default function ReferralsPage() {
     <div className="min-h-dvh bg-zinc-950 text-zinc-400">
       <header className="w-full border-b border-sky-400/20">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <span className="font-semibold text-white">Ashray Sikka</span>
+          <Link href="/" className="font-semibold text-white transition-colors hover:text-sky-400">Ashray Sikka</Link>
           <a
             href={MAILTO}
             className="rounded-lg border border-zinc-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-sky-400"
