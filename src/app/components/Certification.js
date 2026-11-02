@@ -6,13 +6,17 @@ import Link from "next/link";
 
 export default function Certification() {
   return (
-    <motion.div
+    <motion.a
+      href="/university-of-alberta-certificate.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View University of Alberta certificate (opens in a new tab)"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
       className="mt-8 flex items-center gap-4 rounded-xl border border-sky-400/30 bg-sky-400/5 px-5 py-4"
     >
-      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white p-1">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#ffffff] p-1">
       <Image
           src="/university-of-alberta-logo.png"
           alt="University of Alberta"
@@ -27,6 +31,6 @@ export default function Certification() {
           Certified: Python Backend Web Developer
         </p>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }

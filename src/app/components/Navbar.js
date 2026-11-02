@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-sky-400/20 bg-zinc-950/80 backdrop-blur">
-      <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
         href="/"
         onClick={(e) => {
@@ -30,21 +31,24 @@ export default function Navbar() {
         Ashray Sikka
         </Link>
 
-        <div className="hidden sm:flex gap-6 text-sm text-zinc-400">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-sky-400 transition-colors">
-              {l.label}
+        <div className="flex items-center gap-3 sm:gap-5">
+          <div className="hidden sm:flex gap-6 text-sm text-zinc-400">
+            {links.map((l) => (
+              <a key={l.href} href={l.href} className="hover:text-sky-400 transition-colors">
+                {l.label}
+              </a>
+            ))}
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+              className="text-sky-400 hover:text-sky-300 underline transition-colors">
+              Resume
             </a>
-          ))}
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
-            className="text-sky-400 hover:text-sky-300 underline transition-colors">
-            Resume
-          </a>
-        </div>
+          </div>
 
-        <button onClick={() => setOpen(!open)} className="sm:hidden text-white">
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+          <ThemeToggle />
+          <button onClick={() => setOpen(!open)} className="sm:hidden text-white">
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {open && (
