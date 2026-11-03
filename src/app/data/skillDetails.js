@@ -23,6 +23,7 @@ export const skillDetails = {
     projects: [
       { slug: "caretrack-api", title: "CareTrack API" },
       { slug: "sleep-diary", title: "Sleep Diary" },
+      { slug: "ruvia", title: "Ruvia" },
       { slug: "pcos-tracker", title: "PCOS Tracker" },
       { slug: "medscan-ai", title: "MedScan AI" },
       { slug: "urban-spark", title: "Urban Spark" },
@@ -43,6 +44,7 @@ export const skillDetails = {
     summary: "Used for React frontend logic.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
+      { slug: "ruvia", title: "Ruvia" },
       { slug: "pcos-tracker", title: "PCOS Tracker" },
       { slug: "carelink", title: "CareLink" },
     ],
@@ -71,8 +73,9 @@ export const skillDetails = {
     icon: SiDjango,
     level: "Advanced",
     familiarity: 85,
-    summary: "Backend framework for PCOS Tracker, MedScan AI, Urban Spark, CareLink, SafeBelly, and Pulse.",
+    summary: "Backend framework for PCOS Tracker, MedScan AI, Urban Spark, CareLink, SafeBelly, Ruvia, and Pulse.",
     projects: [
+      { slug: "ruvia", title: "Ruvia" },
       { slug: "pcos-tracker", title: "PCOS Tracker" },
       { slug: "medscan-ai", title: "MedScan AI" },
       { slug: "urban-spark", title: "Urban Spark" },
@@ -80,22 +83,23 @@ export const skillDetails = {
       { slug: "safebelly", title: "SafeBelly" },
       { slug: "pulse", title: "Pulse" },
     ],
-    description: "PCOS Tracker's DRF backend serves a React frontend and integrates the Claude API for meal/exercise plans. MedScan AI generates structured diagnostic reports via Claude Vision. Urban Spark is a full restaurant management system built with a team of 3. CareLink is a seven role healthcare coordination platform with realtime messaging, and SafeBelly is the pregnancy product safety scanner that won the Cursor Toronto Hackathon. Pulse is an alarm triage app that ranks care team alerts by urgency.",
+    description: "PCOS Tracker's DRF backend serves a React frontend and integrates the Claude API for meal/exercise plans. MedScan AI generates structured diagnostic reports via Claude Vision. Urban Spark is a full restaurant management system built with a team of 3. CareLink is a seven role healthcare coordination platform with realtime messaging, and SafeBelly is the pregnancy product safety scanner that won the Cursor Toronto Hackathon. Ruvia is a family health diary with consent based sharing. Pulse is an alarm triage app that ranks care team alerts by urgency.",
     links: [],
   },
   "Django REST Framework": {
     icon: SiDjango,
     level: "Proficient",
     familiarity: 70,
-    summary: "REST layer for Sleep Diary, PCOS Tracker, CareLink, SafeBelly, and Pulse.",
+    summary: "REST layer for Sleep Diary, PCOS Tracker, CareLink, SafeBelly, Ruvia, and Pulse.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
+      { slug: "ruvia", title: "Ruvia" },
       { slug: "pcos-tracker", title: "PCOS Tracker" },
       { slug: "carelink", title: "CareLink" },
       { slug: "safebelly", title: "SafeBelly" },
       { slug: "pulse", title: "Pulse" },
     ],
-    description: "Sleep Diary uses DRF for CSD-M clinical scoring and PDF report generation. PCOS Tracker uses DRF token auth across its tracking endpoints. CareLink's DRF API serves seven roles with role scoped querysets, and SafeBelly's scan endpoints return verdicts for barcodes, label photos, and pasted ingredients. Pulse's API serves the ranked incident queue and the score breakdown behind each rank.",
+    description: "Sleep Diary uses DRF for CSD-M clinical scoring and PDF report generation. PCOS Tracker uses DRF token auth across its tracking endpoints. CareLink's DRF API serves seven roles with role scoped querysets, and SafeBelly's scan endpoints return verdicts for barcodes, label photos, and pasted ingredients. Ruvia's API handles check-ins, the care circle's per person sharing rules, and push reminders. Pulse's API serves the ranked incident queue and the score breakdown behind each rank.",
     links: [],
   },
   "SQLAlchemy 2.0": {
@@ -135,12 +139,13 @@ export const skillDetails = {
     summary: "Frontend framework across several shipped projects.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
+      { slug: "ruvia", title: "Ruvia" },
       { slug: "pcos-tracker", title: "PCOS Tracker" },
       { slug: "carelink", title: "CareLink" },
       { slug: "safebelly", title: "SafeBelly" },
       { slug: "pulse", title: "Pulse" },
     ],
-    description: "Built the trend dashboard for Sleep Diary and the meal/exercise plan UI for PCOS Tracker, both installable PWAs with service workers. CareLink's role based dashboards for seven roles are also React, SafeBelly's scanner interface is React too, and so are Pulse's incident queue and detail drawer.",
+    description: "Built the trend dashboard for Sleep Diary and the meal/exercise plan UI for PCOS Tracker, both installable PWAs with service workers. CareLink's role based dashboards for seven roles are also React, SafeBelly's scanner interface is React too, Ruvia is an installable React PWA with offline support, and so are Pulse's incident queue and detail drawer.",
     links: [],
   },
   Vite: {
@@ -150,6 +155,7 @@ export const skillDetails = {
     summary: "Build tooling for several React frontends.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
+      { slug: "ruvia", title: "Ruvia" },
       { slug: "pcos-tracker", title: "PCOS Tracker" },
       { slug: "carelink", title: "CareLink" },
       { slug: "safebelly", title: "SafeBelly" },
@@ -179,12 +185,13 @@ export const skillDetails = {
     projects: [
       { slug: "caretrack-api", title: "CareTrack API" },
       { slug: "sleep-diary", title: "Sleep Diary" },
+      { slug: "ruvia", title: "Ruvia" },
       { slug: "pcos-tracker", title: "PCOS Tracker" },
       { slug: "medscan-ai", title: "MedScan AI" },
       { slug: "carelink", title: "CareLink" },
       { slug: "pulse", title: "Pulse" },
     ],
-    description: "Direct Postgres for CareTrack API, Neon-hosted for Sleep Diary, CareLink, and Pulse, Supabase-hosted for PCOS Tracker.",
+    description: "Direct Postgres for CareTrack API, Neon-hosted for Sleep Diary, CareLink, Ruvia, and Pulse, Supabase-hosted for PCOS Tracker.",
     links: [],
   },
   MySQL: {
@@ -221,13 +228,14 @@ export const skillDetails = {
     icon: SiPostgresql,
     level: "Proficient",
     familiarity: 50,
-    summary: "Serverless Postgres for Sleep Diary, CareLink, and Pulse.",
+    summary: "Serverless Postgres for Sleep Diary, CareLink, Ruvia, and Pulse.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
       { slug: "carelink", title: "CareLink" },
       { slug: "pulse", title: "Pulse" },
+      { slug: "ruvia", title: "Ruvia" },
     ],
-    description: "Neon-hosted PostgreSQL for Sleep Diary's clinical data models, the rebuilt CareLink platform, and the Pulse demo.",
+    description: "Neon-hosted PostgreSQL for Sleep Diary's clinical data models, the rebuilt CareLink platform, Ruvia, and the Pulse demo.",
     links: [],
   },
   Docker: {
@@ -247,8 +255,9 @@ export const skillDetails = {
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
       { slug: "urban-spark", title: "Urban Spark" },
+      { slug: "ruvia", title: "Ruvia" },
     ],
-    description: "Automated pipelines for Sleep Diary and Urban Spark's 370+ test suite.",
+    description: "Automated pipelines for Sleep Diary and Urban Spark's 370+ test suite, plus the free schedule that triggers Ruvia's reminders every 15 minutes.",
     links: [],
   },
   Alembic: {
@@ -303,13 +312,14 @@ export const skillDetails = {
     icon: SiAnthropic,
     level: "Proficient",
     familiarity: 65,
-    summary: "Powers PCOS Tracker plans, SafeBelly verdicts, and Pulse explanations.",
+    summary: "Powers PCOS Tracker plans, SafeBelly verdicts, Ruvia fallback, and Pulse explanations.",
     projects: [
+      { slug: "ruvia", title: "Ruvia" },
       { slug: "pcos-tracker", title: "PCOS Tracker" },
       { slug: "safebelly", title: "SafeBelly" },
       { slug: "pulse", title: "Pulse" },
     ],
-    description: "Generates personalized meal and exercise plans based on user-tracked symptoms. In SafeBelly, handles ingredients missing from the curated list and is told to answer unknown instead of guessing. In Pulse, it can add plain language explanations, with an hourly limit to cap cost.",
+    description: "Generates personalized meal and exercise plans based on user-tracked symptoms. In SafeBelly, handles ingredients missing from the curated list and is told to answer unknown instead of guessing. In Ruvia, it is the last fallback when the other model providers fail. In Pulse, it can add plain language explanations, with an hourly limit to cap cost.",
     links: [],
   },
   "Claude Vision API": {
@@ -328,12 +338,13 @@ export const skillDetails = {
     icon: SiGooglegemini,
     level: "Familiar",
     familiarity: 35,
-    summary: "Powers CareLink's AI assistant, SafeBelly's label reading, and resume matching.",
+    summary: "Powers CareLink's AI assistant, SafeBelly's label reading, Ruvia's fallback, and resume matching.",
     projects: [
       { slug: "carelink", title: "CareLink" },
       { slug: "safebelly", title: "SafeBelly" },
+      { slug: "ruvia", title: "Ruvia" },
     ],
-    description: "CareLink's assistant uses Gemini with role scoped RAG search. SafeBelly tries Gemini first for photographed labels. Also used in Resume Matcher, a project scoring resumes against job descriptions with AI-generated feedback.",
+    description: "CareLink's assistant uses Gemini with role scoped RAG search. SafeBelly tries Gemini first for photographed labels. In Ruvia it is the second model tried after OpenAI. Also used in Resume Matcher, a project scoring resumes against job descriptions with AI-generated feedback.",
     links: [
       { label: "Resume Matcher Demo", url: "https://resume-matcher-ashray.streamlit.app/" }
     ],
@@ -342,9 +353,11 @@ export const skillDetails = {
     icon: Sparkles,
     level: "Familiar",
     familiarity: 30,
-    summary: "Used in professional/experimental context.",
-    projects: [],
-    description: "Explored for LLM integration work; not tied to a public project shown here.",
+    summary: "First model Ruvia tries, plus voice transcription.",
+    projects: [
+      { slug: "ruvia", title: "Ruvia" },
+    ],
+    description: "Ruvia tries OpenAI first for reading check-ins and writing replies, and uses Whisper to turn voice check-ins into text before anything is saved. Also explored for other LLM integration work.",
     links: [],
   },
   Stripe: {
@@ -360,12 +373,13 @@ export const skillDetails = {
     icon: Mail,
     level: "Familiar",
     familiarity: 40,
-    summary: "Email delivery for Sleep Diary and CareLink.",
+    summary: "Email delivery for Sleep Diary, CareLink, and Ruvia.",
     projects: [
       { slug: "sleep-diary", title: "Sleep Diary" },
       { slug: "carelink", title: "CareLink" },
+      { slug: "ruvia", title: "Ruvia" },
     ],
-    description: "Handles OTP signup emails and clinician-facing PDF report delivery in Sleep Diary, and invite emails and OTP password reset in CareLink.",
+    description: "Handles OTP signup emails and clinician-facing PDF report delivery in Sleep Diary, invite emails and OTP password reset in CareLink, and the sign in codes in Ruvia.",
     links: [],
   },
   Railway: {

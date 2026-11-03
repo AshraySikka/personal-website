@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { notFound } from "next/navigation";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, Users } from "lucide-react";
 import { projects } from "../../data/projects";
 import { getTechClass } from "../../data/techColors";
 import Navbar from "../../components/Navbar";
@@ -19,6 +19,8 @@ export default function ProjectDetail({ params }) {
   const [copied, setCopied] = useState(null);
 
   if (!project) return notFound();
+
+  const NoteIcon = project.demoNote?.icon === "users" ? Users : CalendarDays;
 
   const next = () => {
     setDims(null);
@@ -80,7 +82,7 @@ export default function ProjectDetail({ params }) {
 
         {project.demoNote && (
           <div className="mt-4 flex max-w-2xl items-start gap-3 rounded-xl border border-sky-400/30 bg-sky-400/5 px-4 py-3">
-            <CalendarDays size={18} className="mt-0.5 shrink-0 text-sky-400" />
+            <NoteIcon size={18} className="mt-0.5 shrink-0 text-sky-400" />
             <p className="text-sm text-zinc-300">
               {project.demoNote.before}{" "}
               <span className="font-semibold text-sky-400">{project.demoNote.highlight}</span>
