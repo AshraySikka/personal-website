@@ -83,7 +83,7 @@ export const skillDetails = {
       { slug: "safebelly", title: "SafeBelly" },
       { slug: "pulse", title: "Pulse" },
     ],
-    description: "PCOS Tracker's DRF backend serves a React frontend and integrates the Claude API for meal/exercise plans. MedScan AI generates structured diagnostic reports via Claude Vision. Urban Spark is a full restaurant management system built with a team of 3. CareLink is a seven role healthcare coordination platform with realtime messaging, and SafeBelly is the pregnancy product safety scanner that won the Cursor Toronto Hackathon. Ruvia is a family health diary with consent based sharing. Pulse is an alarm triage app that ranks care team alerts by urgency.",
+    description: "PCOS Tracker's DRF backend serves a React frontend, aggregates the dashboard for its 7 day, 30 day and all time views, and integrates the Claude API for meal/exercise plans. MedScan AI generates structured diagnostic reports via Claude Vision. Urban Spark is a full restaurant management system built with a team of 3. CareLink is a seven role healthcare coordination platform with realtime messaging, and SafeBelly is the pregnancy product safety scanner that won the Cursor Toronto Hackathon. Ruvia is a family health diary with consent based sharing. Pulse is an alarm triage app that ranks care team alerts by urgency.",
     links: [],
   },
   "Django REST Framework": {
@@ -99,7 +99,7 @@ export const skillDetails = {
       { slug: "safebelly", title: "SafeBelly" },
       { slug: "pulse", title: "Pulse" },
     ],
-    description: "Sleep Diary uses DRF for CSD-M clinical scoring and PDF report generation. PCOS Tracker uses DRF token auth across its tracking endpoints. CareLink's DRF API serves seven roles with role scoped querysets, and SafeBelly's scan endpoints return verdicts for barcodes, label photos, and pasted ingredients. Ruvia's API handles check-ins, the care circle's per person sharing rules, and push reminders. Pulse's API serves the ranked incident queue and the score breakdown behind each rank.",
+    description: "Sleep Diary uses DRF for CSD-M clinical scoring and PDF report generation. PCOS Tracker uses DRF token auth across its tracking endpoints, plus a dashboard endpoint for its date ranges and a passwordless demo login. CareLink's DRF API serves seven roles with role scoped querysets, and SafeBelly's scan endpoints return verdicts for barcodes, label photos, and pasted ingredients. Ruvia's API handles check-ins, the care circle's per person sharing rules, and push reminders. Pulse's API serves the ranked incident queue and the score breakdown behind each rank.",
     links: [],
   },
   "SQLAlchemy 2.0": {
@@ -145,7 +145,7 @@ export const skillDetails = {
       { slug: "safebelly", title: "SafeBelly" },
       { slug: "pulse", title: "Pulse" },
     ],
-    description: "Built the trend dashboard for Sleep Diary and the meal/exercise plan UI for PCOS Tracker, both installable PWAs with service workers. CareLink's role based dashboards for seven roles are also React, SafeBelly's scanner interface is React too, Ruvia is an installable React PWA with offline support, and so are Pulse's incident queue and detail drawer.",
+    description: "Built the trend dashboard for Sleep Diary and the dashboard with light and dark themes and the meal/exercise plan UI for PCOS Tracker, both installable PWAs with service workers. CareLink's role based dashboards for seven roles are also React, SafeBelly's scanner interface is React too, Ruvia is an installable React PWA with offline support, and so are Pulse's incident queue and detail drawer.",
     links: [],
   },
   Vite: {
@@ -273,12 +273,13 @@ export const skillDetails = {
     icon: SiPytest,
     level: "Advanced",
     familiarity: 85,
-    summary: "Test suites for CareTrack API and Urban Spark.",
+    summary: "Test suites for CareTrack API, Urban Spark, and PCOS Tracker.",
     projects: [
       { slug: "caretrack-api", title: "CareTrack API" },
+      { slug: "pcos-tracker", title: "PCOS Tracker" },
       { slug: "urban-spark", title: "Urban Spark" },
     ],
-    description: "26+ tests in CI for CareTrack API. 370+ tests with GitHub Actions CI/CD for Urban Spark.",
+    description: "26+ tests in CI for CareTrack API. 370+ tests with GitHub Actions CI/CD for Urban Spark. 60 tests for PCOS Tracker covering auth, logging, reports, the dashboard ranges, and the demo account.",
     links: [],
   },
   Pandas: {
@@ -319,7 +320,7 @@ export const skillDetails = {
       { slug: "safebelly", title: "SafeBelly" },
       { slug: "pulse", title: "Pulse" },
     ],
-    description: "Generates personalized meal and exercise plans based on user-tracked symptoms. In SafeBelly, handles ingredients missing from the curated list and is told to answer unknown instead of guessing. In Ruvia, it is the last fallback when the other model providers fail. In Pulse, it can add plain language explanations, with an hourly limit to cap cost.",
+    description: "Generates personalized meal and exercise plans based on user-tracked symptoms, and estimates calories and protein for foods a user logs. Those calls are switched off in the public PCOS Tracker demo to cap cost. In SafeBelly, handles ingredients missing from the curated list and is told to answer unknown instead of guessing. In Ruvia, it is the last fallback when the other model providers fail. In Pulse, it can add plain language explanations, with an hourly limit to cap cost.",
     links: [],
   },
   "Claude Vision API": {
